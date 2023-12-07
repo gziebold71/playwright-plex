@@ -1,0 +1,4 @@
+install node
+
+run `npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha`
+

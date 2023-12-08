@@ -10,6 +10,8 @@
  npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha
  ```
 
+ - create an .env file in the root directory and populuate with your plex user name and password 
+
 ## Run tests
  
 To run the test suite in headless mode, use the following command:

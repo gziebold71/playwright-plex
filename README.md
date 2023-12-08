@@ -6,7 +6,9 @@
  - download and install node
  - run the following command
 
- ```npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha```
+ ```sh
+ npm init playwright@latest --yes -- --quiet --browser=chromium --browser=firefox --browser=webkit --gha
+ ```
 
 ## Run tests
  

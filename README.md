@@ -42,4 +42,4 @@ npm run test:headed account.spec.ts
 
 ## Note
 
- - the test scenario of adding a profile image in the account.spec.ts will fail on first 2 initial runs as the baseline screenshot does not exist.  After the initial runs the image files will exist in `tests/account.spec.ts-snapshots` for all future runs of this particlar test.
+ - the test scenario of adding a profile image in the account.spec.ts will fail on first 2 initial runs as the baseline screenshots do not exist.  After the initial runs the image files will exist in `tests/account.spec.ts-snapshots` for all future runs of this particlar test.

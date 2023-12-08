@@ -74,7 +74,6 @@ export class AccountPage {
                 break;
             }
             else {
-                console.log(x)
                 await this.page.waitForTimeout(1000);
             }
         }

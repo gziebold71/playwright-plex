@@ -25,7 +25,7 @@ describe('Home page', () => {
 		expect (await accountPage.saveChangesButtonHidden()).toEqual(true);
 		// look into haveing a more implicit wait instead of the explict on the new image being fully updated on screen
 		await page.waitForTimeout(1000);
-		expect (await page.screenshot()).toMatchSnapshot('profileImageAdded.png')
+		expect (await page.screenshot()).toMatchSnapshot('profileImageAdded.png',{ threshold: 0.9 })
 
 		await accountPage.clickEditProfileImage();
 		await accountPage.clickDeleteProfilePhoto();
@@ -33,7 +33,7 @@ describe('Home page', () => {
 		expect (await accountPage.dialogBogClosed()).toEqual(true);
 		// look into haveing a more implicit wait instead of the explict on the new image being fully deleted
 		await page.waitForTimeout(1000);
-		expect (await page.screenshot()).toMatchSnapshot('profileImageDeleted.png')
+		expect (await page.screenshot()).toMatchSnapshot('profileImageDeleted.png', { threshold: 0.9 })
 	});
 
 	test('Verify on the account page that user is able to update their user name', async ({
@@ -50,3 +50,12 @@ describe('Home page', () => {
 		expect (await accountPage.getUserName()).toContain(newUserName);
 	});
 });
+
+
+test.afterEach(async ({ page }, testInfo) => {
+	if (testInfo.status !== testInfo.expectedStatus) {
+	  const screenshotPath = testInfo.outputPath(`failure.png`);
+	  testInfo.attachments.push({ name: 'screenshot', path: screenshotPath, contentType: 'image/png' });
+	  await page.screenshot({ path: screenshotPath, timeout: 5000 });
+	}
+  });

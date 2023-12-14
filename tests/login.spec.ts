@@ -17,7 +17,6 @@ describe('Login page', () => {
 	}) => {
 		const mainPage = new MainPage(page)
 		const newTabPromise = page.waitForEvent("popup");
-		let indexOfAuth;
 		await helpers.login({page}, process.env.USERNAME, process.env.PASSWORD)
 		await mainPage.clickOpenPlexButton();
 		const newTab = await newTabPromise;

@@ -6,7 +6,9 @@
   "scripts": {
     "test": "npx playwright test",
     "test:headed": "npx playwright test --headed",
-    "test:debug": "npx playwright test --debug"
+    "test:debug": "npx playwright test --debug",
+    "test:android": "npx playwright test -g 'android'",
+    "test:desktop": "npx playwright test --grep-invert 'android'"
   },
   "keywords": [],
   "author": "",

@@ -14,6 +14,12 @@
 
 ## Run tests
  
+To run the Android tests you will need to an Android device or AVD Emulator running.  
+To run the AVD Emulator download Android Studio, and launch a virtual device from the Virtual
+Device Manager.  From the next window select an Android device to launch.
+
+![Alt text](image.png)
+
 To run the test suite in headless mode, use the following command:
 
 
@@ -31,6 +37,18 @@ To run the test suite in debug mode, use the following command:
 
 ```sh
 npm run test:debug
+```
+
+To run just the Android tests, use the following command:
+
+```sh
+npm run test:android
+```
+
+To run just the desktop based tests, use the following command:
+
+```sh
+npm run test:desktop
 ```
 
 If you only want to run a single set of tests you can set it as the last parameter.

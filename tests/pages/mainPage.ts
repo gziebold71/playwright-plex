@@ -7,6 +7,7 @@ export class MainPage {
 	readonly password: Locator;
 	readonly loginButton: Locator;
 	readonly openPlexButton: Locator;
+	readonly mobileHamburgerMenuButton: Locator;
 
 	constructor(page: Page) {
 		this.page = page;
@@ -15,6 +16,7 @@ export class MainPage {
 		this.password = page.frameLocator('iframe[name="fedauth-iFrame"]').locator('#password');
 		this.loginButton = page.frameLocator('iframe[name="fedauth-iFrame"]').getByRole('button', {name: 'Sign In'})
 		this.openPlexButton = page.getByRole('link', { name: 'Open Plex' })
+		this.mobileHamburgerMenuButton = page.locator('.nav-toggle-mobile')
 	}
 
     async clickLoginMenu() {
@@ -37,5 +39,9 @@ export class MainPage {
 
 	async clickOpenPlexButton(){
 		await this.openPlexButton.click()
+	}
+
+	async clickMobileHamburgerMenuButton(){
+		await this.mobileHamburgerMenuButton.click()
 	}
 }
